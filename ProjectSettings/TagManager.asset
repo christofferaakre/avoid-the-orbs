@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Platform
+  - Collidable
+  - Full Heart
+  - Empty Heart
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Background
+  - Water
+  - UI
+  - Actors
+  - Projectiles
+  - Blocking
+  - Interactable
+  - Floating Text
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Backgorund
+    uniqueID: 2724358141
+    locked: 0
+  - name: Actors
+    uniqueID: 131457845
+    locked: 0
+  - name: Projectiles
+    uniqueID: 3678661891
+    locked: 0
+  - name: Interactable
+    uniqueID: 2402204085
+    locked: 0
+  - name: Floating Text
+    uniqueID: 1828638829
+    locked: 0
