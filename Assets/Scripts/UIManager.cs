@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI finalScoreText;
     [SerializeField] TextMeshProUGUI highScoreText;
+    [SerializeField] TextMeshProUGUI coinsText;
 
     [SerializeField] GameObject deathScreenCanvas;
 
@@ -44,7 +45,10 @@ public class UIManager : MonoBehaviour
     {
        UpdateHealthDisplay();
        UpdateScoreText();
+       UpdateCoinsText();
     }
+
+    
 
     public void ShowDeathScreen() 
     {
@@ -61,6 +65,10 @@ public class UIManager : MonoBehaviour
     public void UpdateScoreText()
     {
         scoreText.text = GameManager.instance.score.ToString(); 
+    }
+    public void UpdateCoinsText()
+    {
+        coinsText.text = GameManager.instance.coins.ToString();
     }
 
     public void UpdateHealthDisplay()

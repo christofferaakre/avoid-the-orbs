@@ -1607,6 +1607,22 @@ PrefabInstance:
       propertyPath: healthUp
       value: 
       objectReference: {fileID: 8300000, guid: 088cc00ea085a8e408bae6cf0515819b, type: 3}
+    - target: {fileID: 5541001421763275351, guid: a5c2e3d4e7491984f83c7728cca6e5ff, type: 3}
+      propertyPath: coinClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541001421763275351, guid: a5c2e3d4e7491984f83c7728cca6e5ff, type: 3}
+      propertyPath: coinClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 575327b49edf04647ab6fee6afd3655f, type: 3}
+    - target: {fileID: 5541001421763275351, guid: a5c2e3d4e7491984f83c7728cca6e5ff, type: 3}
+      propertyPath: healthUpClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5541001421763275351, guid: a5c2e3d4e7491984f83c7728cca6e5ff, type: 3}
+      propertyPath: healthUpClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2ce163f3c7c0b2a4ba330949d3b6c046, type: 3}
     - target: {fileID: 6795106916343186030, guid: a5c2e3d4e7491984f83c7728cca6e5ff, type: 3}
       propertyPath: m_RootOrder
       value: 9

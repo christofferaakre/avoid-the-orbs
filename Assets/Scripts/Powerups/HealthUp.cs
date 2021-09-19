@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
-public class HealthUp : Interactable
+public class HealthUp : Powerup
 {
     public int healthAmount;
     public bool overheal = true;
 
     public override void OnInteract()
     {
+        base.OnInteract();
         Player.instance.Heal(healthAmount, overheal: overheal);
-        VoiceLineManager.instance.PlayClip(VoiceLineManager.instance.healthUp);
+        VoiceLineManager.instance.PlayClip(VoiceLineManager.instance.GetRandomClip(VoiceLineManager.instance.healthUpClips));
         FloatingTextManager.instance.ShowFloatingText("+" + healthAmount.ToString() + "HP",
                                                       fontSize: 16,
                                                       color: Color.green,

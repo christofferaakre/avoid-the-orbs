@@ -12,7 +12,11 @@ public class VoiceLineManager : MonoBehaviour
 
     [SerializeField] public List<AudioClip> gameStartClips = new List<AudioClip>();
     [SerializeField] public List<AudioClip> gameLoseClips = new List<AudioClip>();
+    [SerializeField] public List<AudioClip> healthUpClips = new List<AudioClip>();
+    [SerializeField] public List<AudioClip> coinClips = new List<AudioClip>();
+
     [SerializeField] public AudioClip healthUp;
+
 
     System.Random random;
 

@@ -16,7 +16,10 @@ public class GameManager : MonoBehaviour
     public float musicVolume;
     public float voiceVolume;
 
-    public bool firstTime = true;
+    public bool playedBefore = false;
+
+
+    public int coins;
 
     private void Awake()
     {
@@ -30,11 +33,12 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         LoadGame();
 
-        if (firstTime) 
+        if (!playedBefore) 
         {
             musicVolume = 1;
             voiceVolume = 1;
-            firstTime = false;
+            playedBefore = true;
+            SaveGame();
         }
 
         LoadScene("MainMenu");
@@ -84,13 +88,19 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("IncrementScore", 0, LevelGenerator.instance.scoreIncrementInterval);
     }
 
-    private void StopCountingScore() 
+    private void StopCountingScore()
     {
         CancelInvoke();
-        if (score > highScore) 
+        if (score > highScore)
         {
             highScore = score;
         }
+    }
+
+    public void GainCoins(int coinAmount) 
+    {
+        coins += coinAmount;
+        UIManager.instance.UpdateCoinsText();
     }
 
     public void IncrementScore()
@@ -108,6 +118,8 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("High Score", highScore);
         PlayerPrefs.SetFloat("Music Volume", musicVolume);
         PlayerPrefs.SetFloat("Voice Volume", voiceVolume);
+        PlayerPrefs.SetInt("Coins", coins);
+        PlayerPrefs.SetInt("Played Before", playedBefore ? 1 : 0);
     }
 
     public void LoadGame() 
@@ -115,6 +127,8 @@ public class GameManager : MonoBehaviour
         highScore = PlayerPrefs.GetInt("High Score");
         musicVolume = PlayerPrefs.GetFloat("Music Volume");
         voiceVolume = PlayerPrefs.GetFloat("Voice Volume");
+        coins = PlayerPrefs.GetInt("Coins");
+        playedBefore = PlayerPrefs.GetInt("Played Before") > 0;
     }
 
     public void KillPlayer() 
